@@ -17,7 +17,9 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     //To hold the drawings and stickers
     @IBOutlet weak var canvasImageView: UIImageView!
-    @IBOutlet weak var txtFldCaption: UITextField!
+    @IBOutlet weak var txtFldCaption: UITextView!
+    //@IBOutlet weak var txtFldCaption: GrowingTextView!
+    
 
     @IBOutlet weak var viewCaption: UIView!
     @IBOutlet weak var topToolbar: UIView!
@@ -104,9 +106,10 @@ public final class PhotoEditorViewController: UIViewController {
                                                name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         
-        configureCollectionView()
-        stickersViewController = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
-        hideControls()
+        self.configureCollectionView()
+        self.stickersViewController = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
+        self.hideControls()
+        //self.setTextViewUI()
     }
     
     func configureCollectionView() {
@@ -141,6 +144,24 @@ public final class PhotoEditorViewController: UIViewController {
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
         viewCaption.isHidden =  false
+    }
+    
+    func setTextViewUI() {
+        /*self.txtFldCaption.delegate = self
+        self.txtFldCaption.trimWhiteSpaceWhenEndEditing = false
+        self.txtFldCaption.maxHeight = 120.0
+        self.txtFldCaption.isUserInteractionEnabled = true
+        
+        self.txtFldCaption.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        self.txtFldCaption.layer.cornerRadius = 5
+        self.txtFldCaption.layer.borderWidth = 1
+        self.txtFldCaption.layer.borderColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1).cgColor
+
+        self.txtFldCaption.textColor = UIColor.black
+        self.txtFldCaption.placeholderColor = UIColor.darkGray
+        self.txtFldCaption.placeholder = " Type here.."
+        self.txtFldCaption.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        self.txtFldCaption.font = UIFont.systemFont(ofSize: 15.0)*/
     }
 }
 

@@ -8,5 +8,6 @@ target 'Example' do
   # Pods for editorTest
 #  pod 'iOSPhotoEditor' #, :git => 'https://github.com/M-Hamed/photo-editor.git'
   pod 'iOSPhotoEditor', :path => '../'
+  #pod 'GrowingTextView'
 
 end
