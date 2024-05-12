@@ -18,7 +18,7 @@ public final class PhotoEditorViewController: UIViewController {
     //To hold the drawings and stickers
     @IBOutlet weak var canvasImageView: UIImageView!
     @IBOutlet weak var txtFldCaption: UITextView!
-    //@IBOutlet weak var txtFldCaption: GrowingTextView!
+    //@IBOutlet weak var captionTxtView: GrowingTextView!
     
 
     @IBOutlet weak var viewCaption: UIView!
@@ -147,21 +147,21 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func setTextViewUI() {
-        /*self.txtFldCaption.delegate = self
-        self.txtFldCaption.trimWhiteSpaceWhenEndEditing = false
-        self.txtFldCaption.maxHeight = 120.0
-        self.txtFldCaption.isUserInteractionEnabled = true
+        /*self.captionTxtView.delegate = self
+        self.captionTxtView.trimWhiteSpaceWhenEndEditing = false
+        self.captionTxtView.maxHeight = 120.0
+        self.captionTxtView.isUserInteractionEnabled = true
         
-        self.txtFldCaption.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        self.txtFldCaption.layer.cornerRadius = 5
-        self.txtFldCaption.layer.borderWidth = 1
-        self.txtFldCaption.layer.borderColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1).cgColor
+        self.captionTxtView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        self.captionTxtView.layer.cornerRadius = 5
+        self.captionTxtView.layer.borderWidth = 1
+        self.captionTxtView.layer.borderColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1).cgColor
 
-        self.txtFldCaption.textColor = UIColor.black
-        self.txtFldCaption.placeholderColor = UIColor.darkGray
-        self.txtFldCaption.placeholder = " Type here.."
-        self.txtFldCaption.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        self.txtFldCaption.font = UIFont.systemFont(ofSize: 15.0)*/
+        self.captionTxtView.textColor = UIColor.black
+        self.captionTxtView.placeholderColor = UIColor.darkGray
+        self.captionTxtView.placeholder = " Type here.."
+        self.captionTxtView.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        self.captionTxtView.font = UIFont.systemFont(ofSize: 15.0)*/
     }
 }
 
