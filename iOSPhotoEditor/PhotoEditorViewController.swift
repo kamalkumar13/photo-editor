@@ -17,7 +17,9 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     //To hold the drawings and stickers
     @IBOutlet weak var canvasImageView: UIImageView!
+    @IBOutlet weak var txtFldCaption: UITextField!
 
+    @IBOutlet weak var viewCaption: UIView!
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
 
@@ -86,7 +88,9 @@ public final class PhotoEditorViewController: UIViewController {
         deleteView.layer.borderWidth = 2.0
         deleteView.layer.borderColor = UIColor.white.cgColor
         deleteView.clipsToBounds = true
-        
+        self.txtFldCaption.backgroundColor = .white
+        self.viewCaption.bringSubviewToFront(txtFldCaption)
+
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .bottom
         edgePan.delegate = self
@@ -127,8 +131,8 @@ public final class PhotoEditorViewController: UIViewController {
     
     func setImageView(image: UIImage) {
         imageView.image = image
-        let size = image.suitableSize(widthLimit: UIScreen.main.bounds.width)
-        imageViewHeightConstraint.constant = (size?.height)!
+        let size = image.suitableSize(widthLimit: UIScreen.main.bounds.width - 30)
+        imageViewHeightConstraint.constant = (size!.height )
     }
     
     func hideToolbar(hide: Bool) {
@@ -136,6 +140,7 @@ public final class PhotoEditorViewController: UIViewController {
         topGradient.isHidden = hide
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
+        viewCaption.isHidden =  false
     }
 }
 
@@ -149,6 +154,7 @@ extension PhotoEditorViewController: ColorDelegate {
         }
     }
 }
+
 
 
 

@@ -68,7 +68,7 @@ extension PhotoEditorViewController {
         self.canvasImageView.addSubview(textView)
         addGestures(view: textView)
         textView.becomeFirstResponder()
-    }    
+    }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         view.endEditing(true)
@@ -102,7 +102,7 @@ extension PhotoEditorViewController {
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         let img = self.canvasView.toImage()
-        photoEditorDelegate?.doneEditing(image: img)
+        photoEditorDelegate?.doneEditing(image: img, captionText: txtFldCaption.text ?? "")
         self.dismiss(animated: true, completion: nil)
     }
 

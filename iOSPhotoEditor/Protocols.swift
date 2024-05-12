@@ -18,7 +18,7 @@ public protocol PhotoEditorDelegate {
     /**
      - Parameter image: edited Image
      */
-    func doneEditing(image: UIImage)
+    func doneEditing(image: UIImage,captionText:String)
     /**
      StickersViewController did Disappear
      */
@@ -52,3 +52,4 @@ protocol StickersViewControllerDelegate {
 protocol ColorDelegate {
     func didSelectColor(color: UIColor)
 }
+
